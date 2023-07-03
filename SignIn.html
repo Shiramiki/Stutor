@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Sign In </title>
+
+        <style>
+            form {border: outset;
+                width:50vw;
+                height:50vh;
+                margin: auto;
+            }
+
+            .info {text-align: center;
+                padding-top: 20vh;
+            }
+
+            #Username, #Password{
+                margin-bottom: 3vh;
+            }
+
+            .label {
+                margin-right: 3vw;
+            }
+
+            .header {
+                height: 20vh;
+            }
+
+            
+        </style>
+        
+    </head>
+        
+    <body>
+        <div id = "signin">
+
+            <div class=" header">
+                <h1 style = "text-align: center; padding: 7vh; font-size: 10vh;"> SignIn</h1>
+            </div>
+            
+
+        
+            <form action="/SignIn.php">
+                <div class = "info">
+                    <label for = "Username" class = "label"> Username </label>
+                    <input type ="text" id = "Username" name = "Username"> <br>
+
+                    <label for = "Password" class = "label"> Password </label>
+                    <input type ="pwd" id = "Password" name = "Password"> <br>
+
+                </div>
+                
+
+               <!---<input type = "Submit" value = "SignIn">--> 
+             </form>
+            
+        </div>
+        
+    <body>
+        
+    </body>
+</html>
