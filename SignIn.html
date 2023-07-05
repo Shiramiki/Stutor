@@ -8,23 +8,54 @@
                 width:50vw;
                 height:50vh;
                 margin: auto;
+                
             }
 
             .info {text-align: center;
-                padding-top: 20vh;
+                margin-left: 3vw;               
             }
 
             #Username, #Password{
                 margin-bottom: 3vh;
             }
 
+            #Password   {
+                margin-right: 4vw;
+            }
+
             .label {
-                margin-right: 3vw;
+                font-size:1.7vw;
+                
+            }
+
+            .textbox{
+                width:30%;
+                height:2vw;
+                
             }
 
             .header {
                 height: 20vh;
             }
+
+           button {
+            margin-bottom: 1vh;
+            border: 2px solid green ;
+            border-radius: 10px;
+            color: green;
+            font:1.5vw bold;
+            font-family: Arial, Helvetica, sans-serif;
+            height:3vw;
+           }
+
+           button:hover {
+            background-color: green;
+            color:white;
+        
+           }       
+            
+
+            
 
             
         </style>
@@ -35,21 +66,46 @@
         <div id = "signin">
 
             <div class=" header">
-                <h1 style = "text-align: center; padding: 7vh; font-size: 10vh;"> SignIn</h1>
+                
             </div>
             
 
         
             <form action="/SignIn.php">
+                <h1 style = "text-align: center; font-size:2.5em"> SignIn</h1>
                 <div class = "info">
-                    <label for = "Username" class = "label"> Username </label>
-                    <input type ="text" id = "Username" name = "Username"> <br>
+                    <label for = "Username" class = "label"> Username/ Email </label>
+                    <input type ="text" class="textbox" id = "Username" name = "Username"> <br>
 
                     <label for = "Password" class = "label"> Password </label>
-                    <input type ="pwd" id = "Password" name = "Password"> <br>
+                    <input type ="pwd" class="textbox" id = "Password" name = "Password"> <br>
+
+                </div>
+
+                <div>
+                    <center>
+                        <button id = "signB">
+                            Sign in
+                        </button>
+        
+                        <br>
+        
+                        
+                        <a id=" change" href="" title = "Change Password"> Forgotten password?</a>
+        
+
+                    </center>
+                        <p style = "text-align: right;  margin-right: 1em;">
+                            Haven't signed up?
+        
+                            <button>
+                                Sign up
+                            </button>
+                        </p>
 
                 </div>
                 
+               
 
                <!---<input type = "Submit" value = "SignIn">--> 
              </form>
