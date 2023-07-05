@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Signup</title>
+    <style>
+        input {
+            margin-bottom: 5vh;
+            height: 5vh;
+        }
+
+        label {
+            font-size: 5vh;
+            margin-left: 30vh;
+        }
+        button{
+            border: 4px outset grey;
+            width:20vh;
+            border-radius: 10px;
+            height:8vh;
+            background-color: white;
+            margin-left: 100vh;
+            text-shadow: skyblue;
+        }
+
+        a{
+                       
+            color: blue;
+            text-shadow: skyblue;
+            font-weight: bold;
+            font-size: 4vh;
+        }
+
+       button:hover 
+       {
+        border: 4px inset grey;
+        color: white;
+        font-weight: bolder;
+        background-color: blue;
+
+       }
+
+       button:hover > a
+       {
+         color:white;
+        font-weight: bolder;
+       }
+       
+    </style>
+</head>
+<body>
+    <h3 style = "margin-bottom: 10vh;"> Student SignUp form</h3>
+
+    <div class ="form1">
+        <form> 
+
+            <h4 style="margin-left:5hv;" >Step 1 out of 4</h4>
+            
+            <label for ="fname">Full Name</label> 
+            <input type="text" name = "Fname">  
+            <br>
+
+            <label for ="Username">Username</label> 
+            <input type="text" name = "Username"> 
+            <br> 
+            
+            <label for ="email">Email</label> 
+            <input type="email" name ="email" style ="margin-left:9vh">
+            <br>
+
+            <label for ="pasword">Password</label> 
+            <input type ="password" name ="password">
+            <br>
+
+            <button>
+                <a href = "" target ="Signup_frame" title = "Next">Next </a>
+            </button>
+        </form>
+
+    </div>
+
+    <div class ="form2">
+        <label for ="Course">Your Course</label> 
+        <input type="text" name = "Course"> 
+
+        <label for ="year">Year</label> 
+        <br>
+            <input type="radio" name = "year1" value = "1st"> 
+            <label for ="yea1">1st Year</label> 
+            <br>
+
+            <input type="radio" name = "year2" value = "2nd"> 
+            <label for ="yea2">2nd Year</label> 
+            <br>
+
+            <input type="radio" name = "year3" value = "3rd"> 
+            <label for ="year3">3rd Year</label> 
+            <br>
+
+            <input type="radio" name = "year4" value = "4th"> 
+            <label for ="yea4">1st Year</label>
+            <br> 
+
+            <input type="radio" name = "year5" value = "5th"> 
+            <label for ="year5">1st Year</label> 
+
+    </div>
+    
+</body>
+</html>

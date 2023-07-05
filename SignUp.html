@@ -1,47 +1,87 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>SignUp</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Signup</title>
 
-        <style>
+    <style>
+        .pad {
+            width: 60vh;
+            height:60vh;
+            border: outset;
+            margin:auto;
+            margin-top: 20vh;
 
-        </style>
-    </head>
+        }
 
-    <body>
-        <h2> Sign Up</h2>
-        <form>
-            <label for ="Fname"> Full Name</label>
-            <input type = "text" id="Fname" name="Fname"><br>
+        button{
+            border: 4px outset grey;
+            width:20vh;
+            border-radius: 10px;
+            height:4vh;
+            background-color: white;
+            margin-left: 5vh;
+            text-shadow: skyblue;
+        }
 
-            <label for ="Email"> Email</label>
-            <input type = "text"><br>
+        a{
+                       
+            color: blue;
+            text-shadow: skyblue;
+            font-weight: bold;
+            font-size: 2vh;
+        }
 
-            <label for ="Password"> Password</label>
-            <input type = "text"> <br>
+       button:hover 
+       {
+        border: 4px inset grey;
+        color: white;
+        font-weight: bolder;
+        background-color: blue;
 
-            <label for ="Phone Number"> Phone Number</label>
-            <input type = "text"><br>
+       }
 
-            <label for ="Course"> Current Course</label> <br>
-            <input type = "radio" id = "BSCS" name = "Course" value = "BSCS">
-            <label for=" BSCS"> BSCS</label> <br>
+       button:hover > a
+       {
+         color:white;
+        font-weight: bolder;
+       }
 
-            <label for ="Year"> Year</label> <br>
-            <input type = "radio" id = "First" name = "Year" value = "1st Year">
-            <label for ="First"> 1st Year</label><br>
-            <input type = "radio" id = "Second" name = "Year" value = "2nd Year">
-            <label for ="Second"> 2nd Year</label><br>
-            <input type = "radio" id = "Third" name = "Year" value = "3rd Year">
-            <label for ="Third"> 3rd Year</label><br>
-            <input type = "radio" id = "Fourth" name = "Year" value = "4th Year">
-            <label for ="Fourth"> 4th Year</label><br>
-            <input type = "radio" id = "Fifth" name = "Year" value = "5th Year">
-            <label for ="Fifth"> 5th Year</label><br>
+       .iframe {
+        height:44vh;
+        width:60vh;
+        overflow: hidden;
+       }
+      
+       
+    </style>
+</head>
+<body>
+    <div class=" pad">
+        <div class = "tab">
 
-            <label for ="Units"> Course Units Done</label>
-            <input type = "checkbox" id = "unit1" name = "unit1" value = "unit 1">
-            <label for="vehicle1"> I have a bike</label><br>
-        </form>
-    </body>
-</html>\
+            <h2 style = "text-align:center; font-size: 4vh;"> SignUp</h2>
+            <div class ="buttons">
+                <button>
+                    <a href = "singup_students.html" target ="Signup_frame" title = "Student's"> Students</a>
+                </button>
+    
+                <button>
+                    Tutors
+                </button>
+
+            </div>
+            
+            <div class=" iframe">
+
+                <iframe src="singup_students.html" name = "Signup_frame"style="border: none;height:44vh;width:60vh;" title="Iframe Example "></iframe>
+            </div>
+        </div>
+
+    </div>
+    
+    
+    
+</body>
+</html>
