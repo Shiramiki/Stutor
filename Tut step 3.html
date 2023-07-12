@@ -59,6 +59,7 @@
             subjectInput.type = "text";
             subjectInput.name = "subject" + subjectCount;
             subjectInput.required = true;
+            subjectInput.style.marginBottom = "20px";
 
             var gradeLabel = document.createElement("label");
             gradeLabel.innerHTML = "Current Grade in Subject " + subjectCount + ":";
@@ -66,32 +67,15 @@
             gradeInput.type = "text";
             gradeInput.name = "grade" + subjectCount;
             gradeInput.required = true;
+            gradeInput.style.marginBottom ="20px";
 
-            var problemLabel = document.createElement("label");
-            problemLabel.innerHTML = "Problems Faced in Subject " + subjectCount + ":";
-            var problemInput = document.createElement("input");
-            problemInput.type = "text";
-            problemInput.name = "problem" + subjectCount;
-            problemInput.required = true;
 
-            var topicLabel = document.createElement("label");
-            topicLabel.innerHTML = "Problem Topics in Subject " + subjectCount + ":";
-            var topicInput = document.createElement("input");
-            topicInput.type = "text";
-            topicInput.name = "topic" + subjectCount;
-            topicInput.required = true;
 
             subjectDiv.appendChild(subjectLabel);
             subjectDiv.appendChild(subjectInput);
             subjectDiv.appendChild(document.createElement("br"));
             subjectDiv.appendChild(gradeLabel);
             subjectDiv.appendChild(gradeInput);
-            subjectDiv.appendChild(document.createElement("br"));
-            subjectDiv.appendChild(problemLabel);
-            subjectDiv.appendChild(problemInput);
-            subjectDiv.appendChild(document.createElement("br"));
-            subjectDiv.appendChild(topicLabel);
-            subjectDiv.appendChild(topicInput);
             subjectDiv.appendChild(document.createElement("br"));
 
             container.appendChild(subjectDiv);
@@ -108,7 +92,8 @@
     </script>
 </head>
 <body>
-    <h3>Step 3 out of 4</h3>
+    <h4 style="margin-left:5hv">Step 3 out of 4</h4>
+    <p><strong>Academic Information</strong>  </p>
     <form>
         <div id="subjects-container">
             <div class="subject-container">
@@ -116,10 +101,7 @@
                 <input type="text" id="subject1" name="subject1" required><br><br>
                 <label for="grade1">Current Grade in Subject 1:</label>
                 <input type="text" id="grade1" name="grade1" required><br><br>
-                <label for="problem1">Problems Faced in Subject 1:</label>
-                <input type="text" id="problem1" name="problem1" required><br><br>
-                <label for="topic1">Problem Topics in Subject 1:</label>
-                <input type="text" id="topic1" name="topic1" required><br><br>
+
             </div>
         </div>
 
@@ -129,23 +111,27 @@
         <br><br>
 
 
-        <label for="teaching-mode">Mode of Teaching Required:</label>
+        <label for="teaching-mode">Mode of Teaching Offered:</label>
         <select id="teaching-mode" name="teaching-mode">
             <option value="online">Online</option>
             <option value="physical">Physical</option>
         </select><br><br>
 
-        <label for="assistance-required">Assistance Required:</label>
+        <label for="assistance-required">Assistance Offered:</label>
         <ul>
-        <input type="checkbox" id="assistance1" name="assistance1" value="Teaching">
-          <label for="assistance1"> Teaching</label><br>
-          <input type="checkbox" id="assistance2" name="assistance2" value="Explaining">
-          <label for="assistance2"> Explaining</label><br>
-          <input type="checkbox" id="assistance3" name="assistance3" value="Discussion buddy">
-          <label for="assistance3"> Discussion buddy</label><br>
-         <input type="checkbox" id="assistance4" name="assistance4" value="Homework assistance">
-          <label for="assistance4"> Homework assistance</label><br>
-         <input type="checkbox" id="assistance5" name="assistance5" value="Q&A Session">
+            <input type="checkbox" id="assistance1" name="assistance1" value="Teaching">
+            <label for="assistance1"> Teaching</label><br>
+
+            <input type="checkbox" id="assistance2" name="assistance2" value="Explaining">
+            <label for="assistance2"> Explaining</label><br>
+
+            <input type="checkbox" id="assistance3" name="assistance3" value="Discussion buddy">
+            <label for="assistance3"> Discussion buddy</label><br>
+
+            <input type="checkbox" id="assistance4" name="assistance4" value="Homework assistance">
+            <label for="assistance4"> Homework assistance</label><br>
+
+            <input type="checkbox" id="assistance5" name="assistance5" value="Q&A Session">
           <label for="assistance5"> Q&A Session</label>
         </ul>
 

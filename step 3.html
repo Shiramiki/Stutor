@@ -7,7 +7,7 @@
             margin-bottom: 10px;
         }
 
-        label {
+        label,p {
             font-size: 5vh;
             
         }
@@ -59,6 +59,8 @@
             subjectInput.type = "text";
             subjectInput.name = "subject" + subjectCount;
             subjectInput.required = true;
+            subjectInput.style.marginBottom ="20px";
+
 
             var gradeLabel = document.createElement("label");
             gradeLabel.innerHTML = "Current Grade in Subject " + subjectCount + ":";
@@ -66,6 +68,8 @@
             gradeInput.type = "text";
             gradeInput.name = "grade" + subjectCount;
             gradeInput.required = true;
+            gradeInput.style.marginBottom ="20px";
+
 
             var problemLabel = document.createElement("label");
             problemLabel.innerHTML = "Problems Faced in Subject " + subjectCount + ":";
@@ -73,6 +77,8 @@
             problemInput.type = "text";
             problemInput.name = "problem" + subjectCount;
             problemInput.required = true;
+            problemInput.style.marginBottom ="20px";
+
 
             var topicLabel = document.createElement("label");
             topicLabel.innerHTML = "Problem Topics in Subject " + subjectCount + ":";
@@ -80,6 +86,8 @@
             topicInput.type = "text";
             topicInput.name = "topic" + subjectCount;
             topicInput.required = true;
+            topicInput.style.marginBottom ="20px";
+
 
             subjectDiv.appendChild(subjectLabel);
             subjectDiv.appendChild(subjectInput);
@@ -108,7 +116,8 @@
     </script>
 </head>
 <body>
-    <h1>Student Information</h1>
+    <h4 style="margin-left:5hv">Step 3 out of 4</h4>
+    <p><strong>Academic Information</strong>  </p>
     <form>
         <div id="subjects-container">
             <div class="subject-container">
