@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information</title>
+    <style>
+        .subject-container {
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-size: 5vh;
+            
+        }
+        button{
+            border: 4px outset grey;
+            border-radius: 10px;
+            background-color: white;
+            margin-left: 30vh;
+            text-shadow: skyblue;
+        }
+
+        a{
+                       
+            color: blue;
+            text-shadow: skyblue;
+            font-weight: bold;
+            font-size: 4vh;
+        }
+
+       button:hover 
+       {
+        border: 4px inset grey;
+        color: white;
+        font-weight: bolder;
+        background-color: blue;
+
+       }
+
+       button:hover > a
+       {
+         color:white;
+        font-weight: bolder;
+       }
+
+    </style>
+    <script>
+        function addSubject() {
+            var subjectCount = document.getElementsByClassName("subject-container").length + 1;
+
+            var container = document.getElementById("subjects-container");
+
+            var subjectDiv = document.createElement("div");
+            subjectDiv.className = "subject-container";
+
+            var subjectLabel = document.createElement("label");
+            
+            subjectLabel.innerHTML = "Subject " + subjectCount + ":";
+            var subjectInput = document.createElement("input");
+            subjectInput.type = "text";
+            subjectInput.name = "subject" + subjectCount;
+            subjectInput.required = true;
+
+            var gradeLabel = document.createElement("label");
+            gradeLabel.innerHTML = "Current Grade in Subject " + subjectCount + ":";
+            var gradeInput = document.createElement("input");
+            gradeInput.type = "text";
+            gradeInput.name = "grade" + subjectCount;
+            gradeInput.required = true;
+
+            var problemLabel = document.createElement("label");
+            problemLabel.innerHTML = "Problems Faced in Subject " + subjectCount + ":";
+            var problemInput = document.createElement("input");
+            problemInput.type = "text";
+            problemInput.name = "problem" + subjectCount;
+            problemInput.required = true;
+
+            var topicLabel = document.createElement("label");
+            topicLabel.innerHTML = "Problem Topics in Subject " + subjectCount + ":";
+            var topicInput = document.createElement("input");
+            topicInput.type = "text";
+            topicInput.name = "topic" + subjectCount;
+            topicInput.required = true;
+
+            subjectDiv.appendChild(subjectLabel);
+            subjectDiv.appendChild(subjectInput);
+            subjectDiv.appendChild(document.createElement("br"));
+            subjectDiv.appendChild(gradeLabel);
+            subjectDiv.appendChild(gradeInput);
+            subjectDiv.appendChild(document.createElement("br"));
+            subjectDiv.appendChild(problemLabel);
+            subjectDiv.appendChild(problemInput);
+            subjectDiv.appendChild(document.createElement("br"));
+            subjectDiv.appendChild(topicLabel);
+            subjectDiv.appendChild(topicInput);
+            subjectDiv.appendChild(document.createElement("br"));
+
+            container.appendChild(subjectDiv);
+        }
+
+        function removeSubject() {
+            var container = document.getElementById("subjects-container");
+            var subjects = document.getElementsByClassName("subject-container");
+
+            if (subjects.length > 1) {
+                container.removeChild(subjects[subjects.length - 1]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Step 3 out of 4</h3>
+    <form>
+        <div id="subjects-container">
+            <div class="subject-container">
+                <label for="subject1">Subject 1:</label>
+                <input type="text" id="subject1" name="subject1" required><br><br>
+                <label for="grade1">Current Grade in Subject 1:</label>
+                <input type="text" id="grade1" name="grade1" required><br><br>
+                <label for="problem1">Problems Faced in Subject 1:</label>
+                <input type="text" id="problem1" name="problem1" required><br><br>
+                <label for="topic1">Problem Topics in Subject 1:</label>
+                <input type="text" id="topic1" name="topic1" required><br><br>
+            </div>
+        </div>
+
+        <button id ="add" type="button" onclick="addSubject()">Add Subject</button>
+        <button type="button" onclick="removeSubject()">Remove Subject</button>
+
+        <br><br>
+
+
+        <label for="teaching-mode">Mode of Teaching Required:</label>
+        <select id="teaching-mode" name="teaching-mode">
+            <option value="online">Online</option>
+            <option value="physical">Physical</option>
+        </select><br><br>
+
+        <label for="assistance-required">Assistance Required:</label>
+        <ul>
+        <input type="checkbox" id="assistance1" name="assistance1" value="Teaching">
+          <label for="assistance1"> Teaching</label><br>
+          <input type="checkbox" id="assistance2" name="assistance2" value="Explaining">
+          <label for="assistance2"> Explaining</label><br>
+          <input type="checkbox" id="assistance3" name="assistance3" value="Discussion buddy">
+          <label for="assistance3"> Discussion buddy</label><br>
+         <input type="checkbox" id="assistance4" name="assistance4" value="Homework assistance">
+          <label for="assistance4"> Homework assistance</label><br>
+         <input type="checkbox" id="assistance5" name="assistance5" value="Q&A Session">
+          <label for="assistance5"> Q&A Session</label>
+        </ul>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
