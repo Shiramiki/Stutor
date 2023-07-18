@@ -6,81 +6,150 @@
     <title>Student Signup</title>
 
     <style>
-        .pad {
-            width: 60vh;
-            border: outset;
-            margin:auto;
-            margin-top: 20vh;
-
+        /* Reset default browser styles */
+        body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        button{
-            border: 4px outset grey;
-            width:20vh;
+        /* Global styles */
+        body {
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header styles */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #4CAF50; /* Green color */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .logo img {
+            width: 100px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .navigation {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navigation a {
+            color: #fff; /* White color */
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        /* Main content styles */
+        .main-content {
+            background-color: #fff;
+            border: 2px solid #ccc;
             border-radius: 10px;
-            height:4vh;
-            background-color: white;
-            margin-left: 5vh;
-            text-shadow: skyblue;
+            padding: 40px;
         }
 
-        a{
-                       
-            color: blue;
-            text-shadow: skyblue;
-            font-weight: bold;
-            font-size: 2vh;
+        .main-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #4CAF50; /* Green color */
+            margin-bottom: 20px;
         }
 
-       button:hover 
-       {
-        border: 4px inset grey;
-        color: white;
-        font-weight: bolder;
-        background-color: blue;
+        .main-content p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
 
-       }
+         /* Define color variables */
+    :root {
+        --primary-color: #4FD28A; /* Bright green */
+        --secondary-color: #3555A6; /* Royal blue */
+        --button-hover-color: #3CBFA0; /* Darker green */
+        --button-active-color: #2E4496; /* Darker royal blue */
+    }
 
-       button:hover > a
-       {
-         color:white;
-        font-weight: bolder;
-       }
+    /* ... Rest of the CSS code ... */
 
-       .iframe {
-        height:44vh;
-        width:60vh;
-        
-       }
-      
-       
+    .buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .buttons button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: var(--primary-color);
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border: 4px outset grey;
+    }
+
+    .buttons button:hover {
+        background-color: var(--button-hover-color);
+    }
+
+    .buttons button:active {
+        background-color: var(--button-active-color);
+    }
+
+    .buttons a {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+    }
     </style>
 </head>
 <body>
-    <div class=" pad">
-        <div class = "tab">
-
-            <h2 style = "text-align:center; font-size: 4vh;"> SignUp</h2>
-            <div class ="buttons">
-                <button>
-                    <a href = "step_1.html" target ="Signup_frame" title = "Student's"> Students</a>
-                </button>
-    
-                <button>
-                   <a href="SignUp Tut.html" target="Signup_frame" title="Tutors">Tutors</a>
-                </button>
-
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="Logo2.png" alt="Logo">
             </div>
-            
-            <div class=" iframe">
+            <nav class="navigation">
+                <a href="#" class="nav-item">Home</a>
+                <a href="About_Stutor.html" class="nav-item">About Us</a>
+                <a href="SignIn.html" class="nav-item">Sign In</a>
+            </nav>
+        </header>
 
-                <iframe src="step_1.html" name = "Signup_frame"style="border: none;height:44vh;width:60vh;" title="Iframe Example "></iframe>
+        <div class="main-content">
+            <h1 class="main-title">Student Signup</h1>
+            <div class="pad">
+                <div class="tab">
+                    <h2 style="text-align:center; font-size: 4vh;"> SignUp</h2>
+                    <div class="buttons">
+                        <button>
+                            <a href="step_1.html" target="Signup_frame" title="Student's"> Students</a>
+                        </button>
+                        <button>
+                            <a href="SignUp Tut.html" target="Signup_frame" title="Tutors">Tutors</a>
+                        </button>
+                    </div>
+                    <div class="iframe">
+                        <iframe src="step_1.html" name="Signup_frame" style="border: none; height:44vh; width:100%;" title="Iframe Example"></iframe>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
-    
-    
-    
 </body>
 </html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFFFFF; /* White */
+    }
+    
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #4169E1; /* Royal Blue */
+      color: #FFFFFF; /* White */
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    .tab-menu {
+      display: flex;
+    }
+    
+    .tab-menu button {
+      margin-right: 10px;
+      background: none;
+      border: none;
+      color: #FFFFFF; /* White */
+      cursor: pointer;
+    }
+    
+    /* Profile */
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 30%;
+      height: 100vh;
+      padding: 20px;
+      background-color: #CCCCCC; /* Light Gray */
+    }
+    
+    .profile-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #4169E1; /* Royal Blue */
+      margin-bottom: 10px;
+    }
+    
+    .profile-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .service-offered {
+      margin-bottom: 10px;
+    }
+    
+    .contact-info {
+      margin-bottom: 10px;
+    }
+    
+    .review-gauge {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #FFFF00; /* Yellow */
+    }
+    
+    /* Timeline */
+    .timeline {
+      width: 60%;
+      height: 100vh;
+      padding: 20px;
+      background-color: #FFFFFF; /* White */
+      display: flexbox;
+      border: solid;
+    }
+    
+    .calendar {
+      /* Style your calendar here */
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Logo</div>
+    <nav class="tab-menu">
+      <button>Home</button>
+      <button>About Us</button>
+      <button>Sign In</button>
+    </nav>
+  </header>
+
+  <div class="profile">
+    <div class="profile-picture"></div>
+    <div class="profile-name">John Doe</div>
+    <div class="service-offered">Service Offered</div>
+    <div class="contact-info">
+      <p>WhatsApp: 123456789</p>
+      <p>Phone: 987654321</p>
+      <p>Email: john@example.com</p>
+      <p>Discord: JohnDoe#1234</p>
+    </div>
+    <div class="review-gauge"></div>
+  </div>
+
+  <div class="timeline">
+    <div class="calendar">
+      <!-- Design your calendar content here -->
+    </div>
+  </div>
+</body>
+</html>

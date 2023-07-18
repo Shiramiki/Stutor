@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap: 5px;
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #FFFFFF; /* White */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .calendar-header {
+      grid-column: 1 / -1;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .calendar-day {
+      text-align: center;
+      font-weight: bold;
+      padding: 5px;
+      background-color: #4169E1; /* Royal Blue */
+      color: #FFFFFF; /* White */
+    }
+    
+    .calendar-date {
+      text-align: center;
+      padding: 5px;
+      cursor: pointer;
+    }
+    
+    .calendar-date:hover {
+      background-color: #4169E1; /* Royal Blue */
+      color: #FFFFFF; /* White */
+    }
+    
+    .calendar-date.today {
+      background-color: #00FF00; /* Bright Green */
+      color: #FFFFFF; /* White */
+    }
+    
+    .event-container {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #4169E1; /* Royal Blue */
+      color: #FFFFFF; /* White */
+      display: none;
+    }
+    
+    .event-date {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .event-details {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .event-item {
+      margin-bottom: 5px;
+    }
+    
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      margin: 20px auto;
+    }
+    
+    .btn-prev,
+    .btn-next {
+      display: block;
+      padding: 10px 20px;
+      background-color: #4169E1; /* Royal Blue */
+      color: #FFFFFF; /* White */
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="calendar">
+    <div class="calendar-header" id="calendar-header"></div>
+    <div class="calendar-day">Sun</div>
+    <div class="calendar-day">Mon</div>
+    <div class="calendar-day">Tue</div>
+    <div class="calendar-day">Wed</div>
+    <div class="calendar-day">Thu</div>
+    <div class="calendar-day">Fri</div>
+    <div class="calendar-day">Sat</div>
+  </div>
+
+  <div class="btn-group">
+    <button class="btn-prev" id="btn-prev">Previous Month</button>
+    <button class="btn-next" id="btn-next">Next Month</button>
+  </div>
+
+  <div class="event-container" id="event-container">
+    <div class="event-date"></div>
+    <ul class="event-details"></ul>
+  </div>
+
+  <script>
+    const calendarHeader = document.getElementById("calendar-header");
+    const btnPrev = document.getElementById("btn-prev");
+    const btnNext = document.getElementById("btn-next");
+    const eventContainer = document.getElementById("event-container");
+    const eventDate = eventContainer.querySelector(".event-date");
+    const eventDetails = eventContainer.querySelector(".event-details");
+    let currentMonth = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
+
+    btnPrev.addEventListener("click", () => {
+      currentMonth--;
+      if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      updateCalendar();
+    });
+
+    btnNext.addEventListener("click", () => {
+      currentMonth++;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      }
+      updateCalendar();
+    });
+
+    function updateCalendar() {
+      const calendar = document.querySelector(".calendar");
+      const calendarHeader = document.getElementById("calendar-header");
+      const calendarDates = document.querySelectorAll(".calendar-date");
+      
+      calendarDates.forEach(date => date.remove());
+      
+      const months = [
+        "January", "February", "March", "April", "May", "June", 
+        "July", "August", "September", "October", "November", "December"
+      ];
+      
+      const monthName = months[currentMonth];
+      calendarHeader.textContent = `${monthName} ${currentYear}`;
+
+      const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+      const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+      
+      for (let i = 0; i < firstDay; i++) {
+        const emptyDateElement = document.createElement("div");
+        emptyDateElement.classList.add("calendar-date");
+        calendar.appendChild(emptyDateElement);
+      }
+
+      for (let i = 1; i <= lastDay; i++) {
+        const dateElement = document.createElement("div");
+        dateElement.classList.add("calendar-date");
+        dateElement.textContent = i;
+        calendar.appendChild(dateElement);
+
+        dateElement.addEventListener("mouseenter", () => {
+          showEvent(dateElement.textContent);
+        });
+
+        dateElement.addEventListener("mouseleave", () => {
+          hideEvent();
+        });
+      }
+    }
+
+    function showEvent(date) {
+      eventDate.textContent = date;
+      eventDetails.innerHTML = "";
+
+      switch (date) {
+        case "18":
+          addEvent("Payment Deadline", "Payee: John Doe", "Amount: $100", "Payment Mode: Online Banking");
+          break;
+        case "26":
+          addEvent("Class", "Student: Jane Smith", "Mode: Online", "Time: 10:00 AM - 12:00 PM", "Duration: 2 hours");
+          break;
+        case "7":
+          addEvent("Payment Deadline", "Payee: John Doe", "Amount: $100", "Payment Mode: Online Banking");
+          break;
+        case "17":
+          addEvent("Class", "Student: Jane Smith", "Mode: Online", "Time: 10:00 AM - 12:00 PM", "Duration: 2 hours");
+          break;
+        default:
+          break;
+      }
+
+      eventContainer.style.display = "block";
+    }
+
+    function hideEvent() {
+      eventContainer.style.display = "none";
+    }
+
+    function addEvent(...eventDetails) {
+      eventDetails.forEach(detail => {
+        const eventItem = document.createElement("li");
+        eventItem.classList.add("event-item");
+        eventItem.textContent = detail;
+        eventDetails.appendChild(eventItem);
+      });
+    }
+
+    updateCalendar();
+  </script>
+</body>
+</html>
