@@ -1,118 +1,156 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Sign In </title>
+<head>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+    <style>
+        /* Reset default browser styles */
+        body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-        <style>
-            form {border: outset;
-                width:50vw;
-                height:50vh;
-                margin: auto;
-                
-            }
+        /* Global styles */
+        body {
+            background-color: #f2f2f2;
+        }
 
-            .info {text-align: center;
-                margin-left: 3vw;               
-            }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-            #Username, #Password{
-                margin-bottom: 3vh;
-            }
+        /* Header styles */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: rgb(79, 210, 138); /* Green color */
+            padding: 10px;
+            border-radius: 5px;
+        }
 
-            #Password   {
-                margin-right: 4vw;
-            }
+        .logo img {
+            width: 100px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
 
-            .label {
-                font-size:1.7vw;
-                
-            }
+        .navigation {
+            display: flex;
+            gap: 20px;
+        }
 
-            .textbox{
-                width:30%;
-                height:2vw;
-                
-            }
+        .navigation a {
+            color: #ffffff; /* White color */
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 400;
+        }
 
-            .header {
-                height: 20vh;
-            }
-
-           button {
-            margin-bottom: 1vh;
-            border: 2px solid green ;
+        /* Form styles */
+        .form-container {
+            background-color: #ffffff; /* White color */
+            border: 2px solid #ccc;
             border-radius: 10px;
-            color: green;
-            font:1.5vw bold;
-            font-family: Arial, Helvetica, sans-serif;
-            height:3vw;
-           }
+            padding: 40px;
+        }
 
-           button:hover {
-            background-color: green;
-            color:white;
-        
-           }       
-            
+        .form-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: rgb(79, 210, 138); /* Green color */
+            margin-bottom: 20px;
+        }
 
-            
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-            
-        </style>
-        
-    </head>
-        
-    <body>
-        <div id = "signin">
+        .form-label {
+            font-size: 18px;
+            font-weight: 700;
+            color: rgb(79, 210, 138); /* Green color */
+        }
 
-            <div class=" header">
-                
+        .form-input {
+            width: 100%;
+            height: 40px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-button {
+            background-color: rgb(79, 210, 138); /* Green color */
+            color: #ffffff; /* White color */
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-button:hover {
+            background-color: rgb(66, 179, 116); /* Darker green color */
+        }
+
+        /* Footer styles */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+
+        .footer a {
+            color: #777;
+            text-decoration: none;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="logo3.png" alt="Logo">
             </div>
-            
+            <nav class="navigation">
+                <a href="#" class="nav-item">Home</a>
+                <a href="About_Stutor.html" class="nav-item">About Us</a>
+            </nav>
+        </header>
 
-        
+        <div class="form-container">
+            <h2 class="form-title">Sign In</h2>
             <form action="/SignIn.php">
-                <h1 style = "text-align: center; font-size:2.5em"> SignIn</h1>
-                <div class = "info">
-                    <label for = "Username" class = "label"> Username/ Email </label>
-                    <input type ="text" class="textbox" id = "Username" name = "Username"> <br>
-
-                    <label for = "Password" class = "label"> Password </label>
-                    <input type ="pwd" class="textbox" id = "Password" name = "Password"> <br>
-
+                <div class="form-group">
+                    <label for="Username" class="form-label">Username/Email</label>
+                    <input type="text" class="form-input" id="Username" name="Username">
                 </div>
 
-                <div>
-                    <center>
-                        <button id = "signB">
-                            Sign in
-                        </button>
-        
-                        <br>
-        
-                        
-                        <a id=" change" href="" title = "Change Password"> Forgotten password?</a>
-        
-
-                    </center>
-                        <p style = "text-align: right;  margin-right: 1em;">
-                            Haven't signed up?
-        
-                            <button>
-                                <a href = "SignUp.html" title = "signin">Sign up</a>
-                            </button>
-                        </p>
-
+                <div class="form-group">
+                    <label for="Password" class="form-label">Password</label>
+                    <input type="password" class="form-input" id="Password" name="Password">
                 </div>
-                
-               
 
-               <!---<input type = "Submit" value = "SignIn">--> 
-             </form>
-            
+                <button class="form-button" id="signB">Sign in</button>
+
+                <p class="form-footer">
+                    Haven't signed up? <a href="SignUp.html">Sign up</a>
+                </p>
+            </form>
         </div>
-        
-    <body>
-        
-    </body>
+
+        <footer class="footer">
+            &copy; 2023 Company Name. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </footer>
+    </div>
+</body>
 </html>
