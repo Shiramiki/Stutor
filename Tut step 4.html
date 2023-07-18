@@ -55,6 +55,94 @@
 
        }
 
+       body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap: 5px;
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #FFFFFF; /* White */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .calendar-header {
+      grid-column: 1 / -1;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .calendar-day {
+      text-align: center;
+      font-weight: bold;
+      padding: 5px;
+      background-color: #4169E1; /* Royal Blue */
+      color: #FFFFFF; /* White */
+    }
+    
+    .calendar-date {
+      text-align: center;
+      padding: 5px;
+      cursor: pointer;
+    }
+    
+    .calendar-date:hover {
+      background-color: #4169E1; /* Royal Blue */
+      color: #FFFFFF; /* White */
+    }
+    
+    .calendar-date.today {
+      background-color: #00FF00; /* Bright Green */
+      color: #FFFFFF; /* White */
+    }
+    
+    .event-container {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #4169E1; /* Royal Blue */
+      color: #FFFFFF; /* White */
+      display: none;
+    }
+    
+    .event-date {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .event-details {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .event-item {
+      margin-bottom: 5px;
+    }
+    
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      margin: 20px auto;
+    }
+    
+    .btn-prev,
+    .btn-next {
+      display: block;
+      padding: 10px 20px;
+      background-color: #4169E1; /* Royal Blue */
+      color: #FFFFFF; /* White */
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
     </style>
 </head>
 <body>
